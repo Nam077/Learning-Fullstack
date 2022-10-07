@@ -2,10 +2,10 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AccountModule } from './account/account.module';
-
+import { TypeOrmModuleConfig } from './database/config';
 @Module({
-  imports: [AccountModule],
-  controllers: [AppController],
-  providers: [AppService],
+    imports: [AccountModule, TypeOrmModuleConfig],
+    controllers: [AppController],
+    providers: [AppService],
 })
 export class AppModule {}
